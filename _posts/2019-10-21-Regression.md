@@ -1,7 +1,9 @@
 ---
 layout: post
-title: You're up and running!
+title: Regression Project
 ---
+
+Summary of the Regression Project
 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
