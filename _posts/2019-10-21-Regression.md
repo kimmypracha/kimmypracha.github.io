@@ -26,7 +26,7 @@ If we take a look at my dataset. We will found some excessive type of data that 
     Economy (GDP per Capita)         0.780966
 From this correlation list which related to the Happiness Score. We don't have any negative correlation here. That means all of these parameter will encourage the Happiness Score in the same way. Additionally, even if the minimum correlation is 0.395199. I don't want to delete it. Because I think it enough to contain, I might encourage the prediction in a good significant.
 
-<h1> How's about the PAIRPLOT! <h1>
+<h1> How's about the PAIRPLOT! </h1>
 
 <img src="/images/regression_pairplot.png"/>
 
@@ -47,6 +47,7 @@ From this correlation list which related to the Happiness Score. We don't have a
 <h1> Model Tournament!! </h1>
     In this scenario, I prefer to choose 4 different possible method to approach this problem: Linear Regression with StandardScaler and Train_test_split, Linear Regression with just Train_test_split, Ridge and Cross Validation with StandardScaler, and Ridge and just Cross Validation. When we compete R^2 and Adjust R^2 value we got this values:
     <br>
+    <code>
         1.Linear Regression with StandardScaler and Train_test_split
         0.9926908343950043
         0.9838154190175095
@@ -61,7 +62,8 @@ From this correlation list which related to the Happiness Score. We don't have a
         ######
         4.Ridge and just Cross Validation
         0.9931203201266213
-        0.992284930427711  
+        0.992284930427711
+    </code>  
     <br>
     We can implied that StandardScaler might make the data more intuitive to predict. The winner of this Tournament is "Ridge and Cross Validation with StandardScaler!"
 
