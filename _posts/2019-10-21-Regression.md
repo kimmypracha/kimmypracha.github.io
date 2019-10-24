@@ -77,3 +77,4 @@ My goal is to predict the Happiness score from those parameter. Which is very in
 <h1> Summary </h1>
    <p>The model that we got is RidgeCV with StandardScaler. which alpha is 1.0 and the Equation is 
      <img src= "/images/regression_equation.png">
+     And you can see what I did by clicking <a href="https://github.com/kimmypracha/RegressionProject">here.</a>
