@@ -30,7 +30,7 @@ From this correlation list which related to the Happiness Score. We don't have a
 
 <img src="/images/regression_pairplot.png"/>
 
-    According to the image above, We might see some skew values from some parameters. I already tried to approach with the log method, I found that it going to be -inf. In my assumption, because the most of value in my dataset is close to 0 or 1 which they can lead to the huge negative value when they applied to log. So we decided to keep in that way.
+According to the image above, We might see some skew values from some parameters. I already tried to approach with the log method, I found that it going to be -inf. In my assumption, because the most of value in my dataset is close to 0 or 1 which they can lead to the huge negative value when they applied to log. So we decided to keep in that way.
 
 <h1> Let's Determine the Polynomial Degree! </h1>
    In this process, there are two big interesting issue to disscuss.
@@ -47,7 +47,6 @@ From this correlation list which related to the Happiness Score. We don't have a
 <h1> Model Tournament!! </h1>
     In this scenario, I prefer to choose 4 different possible method to approach this problem: Linear Regression with StandardScaler and Train_test_split, Linear Regression with just Train_test_split, Ridge and Cross Validation with StandardScaler, and Ridge and just Cross Validation. When we compete R^2 and Adjust R^2 value we got this values:
     <br>
-    <code>
         1.Linear Regression with StandardScaler and Train_test_split
         0.9926908343950043
         0.9838154190175095
@@ -62,8 +61,7 @@ From this correlation list which related to the Happiness Score. We don't have a
         ######
         4.Ridge and just Cross Validation
         0.9931203201266213
-        0.992284930427711
-    </code>  
+        0.992284930427711 
     <br>
     We can implied that StandardScaler might make the data more intuitive to predict. The winner of this Tournament is "Ridge and Cross Validation with StandardScaler!"
 
