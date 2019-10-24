@@ -24,8 +24,7 @@ If we take a look at my dataset. We will found some excessive type of data that 
     Health (Life Expectancy)         0.724200
     Family                           0.740605
     Economy (GDP per Capita)         0.780966
-
-    From this correlation list which related to the Happiness Score. We don't have any negative correlation here. That means all of these parameter will encourage the Happiness Score in the same way. Additionally, even if the minimum correlation is 0.395199. I don't want to delete it. Because I think it enough to contain, I might encourage the prediction in a good significant.
+From this correlation list which related to the Happiness Score. We don't have any negative correlation here. That means all of these parameter will encourage the Happiness Score in the same way. Additionally, even if the minimum correlation is 0.395199. I don't want to delete it. Because I think it enough to contain, I might encourage the prediction in a good significant.
 
 <h1> How's about the PAIRPLOT! <h1>
 
@@ -38,7 +37,8 @@ According to the image above, We might see some skew values from some parameters
    <h2> 1. Tradeoff of Variance and Bias </h2>
         In this scheme, we are gonna find the best degree for polynomial to
         do some regression on the data. So we would apply the PolynomialFeatures and apply all of them to data, and find the most feasible one. Sometimes,It might be fluctuate, but the degree which gives minimum mean squared error is consistent. So we prefer to use 1 degree polynomial regression on the data -- Linear Regression.
-        <img src = "images/regression_deg_plot.png"><img>
+        <img src = "/images/regression_deg_plot.png"></img>
+                           regression_deg_plot.png
     <h2> 2. Don't normalize all of them! </h2>
         At first we have to scale the data to normalize the distribution of the data. The important key is we shouldn't scale to the whole dataset, because we are going to pretend like we haven't seen the test set before. To do like that when we split the dataset -- which we already joined one_hot dataframe before -- by 80:20 ratio (train:test). and we fit the Scaler on the train dataset, and transform on the test dataset. The important thing is we don't have to scale on dummies column that we changed from the categorical variable. So we will temporarily split by the "hot_columns" that we collected it before, and then we join it back together after we scaled. 
         !!PLEASE USE StandardScaler CAREFULLY!! 
