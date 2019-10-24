@@ -46,23 +46,23 @@ From this correlation list which related to the Happiness Score. We don't have a
         So I would like to write my own function called split_scale() which can be used instead of train_test_split(), which is more flexible to do seperate scaling.
 <h1> Model Tournament!! </h1>
     In this scenario, I prefer to choose 4 different possible method to approach this problem: Linear Regression with StandardScaler and Train_test_split, Linear Regression with just Train_test_split, Ridge and Cross Validation with StandardScaler, and Ridge and just Cross Validation. When we compete R^2 and Adjust R^2 value we got this values:
-
-    1.Linear Regression with StandardScaler and Train_test_split
-    0.9926908343950043
-    0.9838154190175095
-    ######
-    2. Linear Regression with just Train_test_split
-    0.9919631136399509
-    0.9822040373456057
-    ######
-    3.Ridge and Cross Validation with StandardScaler
-    0.9931769996497433
-    0.992348492464355
-    ######
-    4.Ridge and just Cross Validation
-    0.9931203201266213
-    0.992284930427711  
-
+    <br>
+        1.Linear Regression with StandardScaler and Train_test_split
+        0.9926908343950043
+        0.9838154190175095
+        ######
+        2. Linear Regression with just Train_test_split
+        0.9919631136399509
+        0.9822040373456057
+        ######
+        3.Ridge and Cross Validation with StandardScaler
+        0.9931769996497433
+        0.992348492464355
+        ######
+        4.Ridge and just Cross Validation
+        0.9931203201266213
+        0.992284930427711  
+    <br>
     We can implied that StandardScaler might make the data more intuitive to predict. The winner of this Tournament is "Ridge and Cross Validation with StandardScaler!"
 
 <h1> Summary </h1>
