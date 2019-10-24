@@ -35,35 +35,36 @@ According to the image above, We might see some skew values from some parameters
 <h1> Let's Determine the Polynomial Degree! </h1>
    In this process, there are two big interesting issue to disscuss.
    <h2> 1. Tradeoff of Variance and Bias </h2>
-        In this scheme, we are gonna find the best degree for polynomial to
-        do some regression on the data. So we would apply the PolynomialFeatures and apply all of them to data, and find the most feasible one. Sometimes,It might be fluctuate, but the degree which gives minimum mean squared error is consistent. So we prefer to use 1 degree polynomial regression on the data -- Linear Regression.
+    In this scheme, we are gonna find the best degree for polynomial to
+    do some regression on the data. So we would apply the PolynomialFeatures and apply all of them to data, and find the most feasible one. Sometimes,It might be fluctuate, but the degree which gives minimum mean squared error is consistent. So we prefer to use 1 degree polynomial regression on the data -- Linear Regression.
         <img src = "/images/regression_deg_plot.png"/>
     <h2> 2. Don't normalize all of them! </h2>
-        At first we have to scale the data to normalize the distribution of the data. The important key is we shouldn't scale to the whole dataset, because we are going to pretend like we haven't seen the test set before. To do like that when we split the dataset -- which we already joined one_hot dataframe before -- by 80:20 ratio (train:test). and we fit the Scaler on the train dataset, and transform on the test dataset. The important thing is we don't have to scale on dummies column that we changed from the categorical variable. So we will temporarily split by the "hot_columns" that we collected it before, and then we join it back together after we scaled. 
-        !!PLEASE USE StandardScaler CAREFULLY!! 
-        (Because it would give you numpy array not DataFrame, and index would be change!)
-        After all above process, it would be a little bit complicated, 
-        So I would like to write my own function called split_scale() which can be used instead of train_test_split(), which is more flexible to do seperate scaling.
+    At first we have to scale the data to normalize the distribution of the data. The important key is we shouldn't scale to the whole dataset, because we are going to pretend like we haven't seen the test set before. To do like that when we split the dataset -- which we already joined one_hot dataframe before -- by 80:20 ratio (train:test). and we fit the Scaler on the train dataset, and transform on the test dataset. The important thing is we don't have to scale on dummies column that we changed from the categorical variable. So we will temporarily split by the "hot_columns" that we collected it before, and then we join it back together after we scaled. 
+    !!PLEASE USE StandardScaler CAREFULLY!! 
+    (Because it would give you numpy array not DataFrame, and index would be change!)
+    After all above process, it would be a little bit complicated, 
+    So I would like to write my own function called split_scale() which can be used instead of train_test_split(), which is more flexible to do seperate scaling.
 <h1> Model Tournament!! </h1>
     In this scenario, I prefer to choose 4 different possible method to approach this problem: Linear Regression with StandardScaler and Train_test_split, Linear Regression with just Train_test_split, Ridge and Cross Validation with StandardScaler, and Ridge and just Cross Validation. When we compete R^2 and Adjust R^2 value we got this values:
-    <br>
-        1.Linear Regression with StandardScaler and Train_test_split
+    
+    1.Linear Regression with StandardScaler and Train_test_split
         0.9926908343950043
         0.9838154190175095
         ######
-        2. Linear Regression with just Train_test_split
+    2. Linear Regression with just Train_test_split
         0.9919631136399509
         0.9822040373456057
         ######
-        3.Ridge and Cross Validation with StandardScaler
+    3.Ridge and Cross Validation with StandardScaler
         0.9931769996497433
         0.992348492464355
         ######
-        4.Ridge and just Cross Validation
+    4.Ridge and just Cross Validation
         0.9931203201266213
         0.992284930427711 
-    <br>
-    We can implied that StandardScaler might make the data more intuitive to predict. The winner of this Tournament is "Ridge and Cross Validation with StandardScaler!"
+
+    We can implied that StandardScaler might make the data more intuitive to predict. 
+    The winner of this Tournament is "Ridge and Cross Validation with StandardScaler!"
 
 <h1> Summary </h1>
    The model that we got is RidgeCV with StandardScaler. which alpha is 1.0 and the Equation is 
