@@ -18,12 +18,12 @@ My goal is to predict the Happiness score from those parameter. Which is very in
    <p>After we cut the redundant data out. We have one categorical data left -- Region. So we keep 2 data that is important : one_hot DataFrame which we get from get_dummies() , hot_columns (List of columns in one_hot DataFrame) -- This part will be very important to next amazing method that I've write by myself.
 <h1> Correlation After Cleaning Data </h1>
 <code>
-    Trust (Government Corruption)    0.395199
-    Dystopia Residual                0.530474
-    Freedom                          0.568211
-    Health (Life Expectancy)         0.724200
-    Family                           0.740605
-    Economy (GDP per Capita)         0.780966
+    Trust (Government Corruption)    0.395199<br>
+    Dystopia Residual                0.530474<br>
+    Freedom                          0.568211<br>
+    Health (Life Expectancy)         0.724200<br>
+    Family                           0.740605<br>
+    Economy (GDP per Capita)         0.780966<br>
 </code>
 <p>From this correlation list which related to the Happiness Score. We don't have any negative correlation here. That means all of these parameter will encourage the Happiness Score in the same way. Additionally, even if the minimum correlation is 0.395199. I don't want to delete it. Because I think it enough to contain, I might encourage the prediction in a good significant.
 
@@ -52,22 +52,23 @@ My goal is to predict the Happiness score from those parameter. Which is very in
 
 <h1> Model Tournament!! </h1>
     <p>In this scenario, I prefer to choose 4 different possible method to approach this problem: Linear Regression with StandardScaler and Train_test_split, Linear Regression with just Train_test_split, Ridge and Cross Validation with StandardScaler, and Ridge and just Cross Validation. When we compete R^2 and Adjust R^2 value we got this values:
+    <br>
     <code>
-    1.Linear Regression with StandardScaler and Train_test_split
-        0.9926908343950043
-        0.9838154190175095
-
-    2. Linear Regression with just Train_test_split
-        0.9919631136399509
-        0.9822040373456057
-
-    3.Ridge and Cross Validation with StandardScaler
-        0.9931769996497433
-        0.992348492464355
-
-    4.Ridge and just Cross Validation
-        0.9931203201266213
-        0.992284930427711 
+    1.Linear Regression with StandardScaler and Train_test_split<br>
+        0.9926908343950043<br>
+        0.9838154190175095<br>
+        <br>
+    2. Linear Regression with just Train_test_split<br>
+        0.9919631136399509<br>
+        0.9822040373456057<br>
+        <br>
+    3.Ridge and Cross Validation with StandardScaler<br>
+        0.9931769996497433 <br>
+        0.992348492464355 <br>
+        <br>
+    4.Ridge and just Cross Validation<br>
+        0.9931203201266213<br>
+        0.992284930427711 <br>
 </code>
 
     We can implied that StandardScaler might make the data more intuitive to predict. 
