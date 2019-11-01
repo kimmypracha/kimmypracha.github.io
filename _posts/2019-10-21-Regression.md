@@ -18,7 +18,7 @@ My goal is to predict the Happiness score from those parameter. Which is very in
    <p>After we cut the redundant data out. We have one categorical data left -- Region. So we keep 2 data that is important : one_hot DataFrame which we get from get_dummies() , hot_columns (List of columns in one_hot DataFrame) -- This part will be very important to next amazing method that I've write by myself.
 <h1> Correlation After Cleaning Data </h1>
 <code>
-    Trust (Government Corruption)    0.395199
+    Trust (Government Corruption)    0.395199<br>
     Dystopia Residual                0.530474<br>
     Freedom                          0.568211<br>
     Health (Life Expectancy)         0.724200<br>
