@@ -19,7 +19,6 @@ My goal is to predict the Happiness score from those parameter. Which is very in
 <h1> Correlation After Cleaning Data </h1>
 <code>
     Trust (Government Corruption)    0.395199
-    
     Dystopia Residual                0.530474<br>
     Freedom                          0.568211<br>
     Health (Life Expectancy)         0.724200<br>
