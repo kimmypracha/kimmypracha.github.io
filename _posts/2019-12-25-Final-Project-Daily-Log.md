@@ -25,7 +25,7 @@ Chunking is the method that we used for divide chunks of words by regular expres
 If I have time, I'm going to bring vector from GloVe, Word2Vec, and TFIDF vectorizor algorithm to used on movie genres classification on several algorithms such as GradientBoostingClassifier, KNN, RandomForest By picking just 40% or 20% of the whole dataset first due to the huge data handling problem. 
 
 **January 9th**
-
+   Today, I worked on the train_test_split method. I hope that this would help to reduce the data. However, it still took a time. So I would do on the Text Summarization on the plot to reduce the plot into 1-2 sentence or reduce into a couple of word that have impact enough on the genre. I also learned about Gensim library for Word2Vec Algorithm and how to use it but I'm still confusing about the implementation and application. I'm going to used it after I figured out on the TFIDF Vector issue. Also, I'm also learning about GloVe and Fastext which are going to be an alternative for Word Vectorization too. Tomorrow, I'm going to add Text Summarization on the movie plot data to reduce the text and increase computational speed. I also have a problem on the dataset about the genre. The dataset contained the multiple type of genre such as "horror, science fiction", "drama, science, fiction." I'm figuring it out for the best way to clean this data. If I keep this kind of movie genre, there are 2267 type of movie. It is too much. So I would like to simplify type of movie. 
 **January 10th**
 
 **January 13th**
