@@ -33,6 +33,20 @@ If I have time, I'm going to bring vector from GloVe, Word2Vec, and TFIDF vector
   Today, I put my work on convert text to vector with Word2Vec algorithm. It takes some time. Finally, I got the vector from word2vec. The interesting thing is we can choose dimension for the result vector. However, I also stuck on put some vector into the LogisticRegression. I tried to classify on 1 genre first (to be simple). but it still took a time, I think there were something wrong. Now, I still can not diagnose the problem.
   Next time, I will try many possible way do deal with LogisticRegression to make it work. and then continue on my main goal which is comparing to other algorithm.
 **January 15th**
+  Today, I start to clean my text data, which is word tokenization, getting only word(no number and symbol),deleting stopwords, and stemming, and save it in the pickle file to avoid repetitive loading. So I can save my time. I store both vector and movie plot that I've got in the pickle file and load it when I restart the kernel. After this, I can go further than waiting for the same calculation to find a way to train the model and predict. So I finally did the prediction. 
+  1. Use word2vec algorithm to create vector dictionary from train dataset, and here is what I got.
+  Accuracy 
+  MultiLabel K-NearestNeighbor : 0.2861
+  Decision Tree : 0.1898
+  Extra Tree : 0.1629
+  Random Forest : 0.2226
+  2. Use CountVectorizer and TfidfTransformer to create a word vector and predict with the same algorithm.
+  Accuracy
+  Multi-Label K-NearestNeighbor : 0.5726
+  Decision Tree : 0.2117
+  Extra Tree : 0.1608
+  Random Forest : 0.1615
+  However, Multi-Label KNN is very slow for processing. We are looking for BinaryRelevance Technique to apply to other faster and more efficient algorithm that cannot apply to multi-label classification directly. but we cannot split the data evenly. Tomorrow, I will figure out about how to split the dataset evenly that we can have data enough to predict test dataset with trainning on the train dataset. 
 
 **January 16th**
 
