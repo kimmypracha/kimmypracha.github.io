@@ -49,5 +49,6 @@ If I have time, I'm going to bring vector from GloVe, Word2Vec, and TFIDF vector
   However, Multi-Label KNN is very slow for processing. We are looking for BinaryRelevance Technique to apply to other faster and more efficient algorithm that cannot apply to multi-label classification directly. but we cannot split the data evenly. Tomorrow, I will figure out about how to split the dataset evenly that we can have data enough to predict test dataset with trainning on the train dataset. 
 
 **January 16th**
-
+   Today, I learned on stratified sampling and looking for the percent of 0 and 1 in each genres. To avoid single-class classification. I cut 14 genres out, which have 95-100% containing zero value in that genre. So now I can applied BinaryRelevance Technique for Multi-Label classification. So I can run svm for this dataset, but it still took too long time. So we might find other algorithm that might be more interesting than svm. 
+   The result that I got from this time is better than the previous version if we compared to the same algorithm. If I have more time, I will write the whole comparation to each algorithm and use %%timeit module to measure time that they might take and then decide for putting into cross_validation to optimize the quality of the text classification model.
 **January 17th**
