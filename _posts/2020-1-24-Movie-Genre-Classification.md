@@ -15,7 +15,7 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
             (Topic) (Movie Plot) (Binary Representation of each category - 0 No, 1 Yes)
             The topic part will cover with 3 quotation marks (Such as """Avenger"" Endgame") and the genre parts (Binary representation part) will have only 0 or 1 separate by space which the position of each number will correspond to the columns of genres. 
             My assumption is "Movie plots at some lines are not covered by quotation mark, but some of them are covered by quotation mark." If it's true, this can cause the table have inequal columns in each row. As a result, the read_csv() method didn't work.
-            <h2> Start to extract the dataset </h2>
+    <h2> Start to extract the dataset </h2>
             I started to read file with as a text file on each line, and put it into a list of sentence of each line. Of course, more than 160,000 lines. 
                 1. Capture 'Topic' First
                     Since Topic is the most part that has pattern, so I use regular expression to extract the text that covered by three quotation marks. I capture that data to append to topic_list and delete it from the text in the main list.
@@ -23,7 +23,7 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
                     Since the another part that is easily to capture is binary representation part. So I use regular expression to capture the text that have 0 or 1 with space repetition for 28 times. So I can capture the binary representation part. I append this part as a list of number to vector_list. So I'll have vector_list as a list of list containing binary representation of movie category. Afterward, I deleted the binary representation from the main text. 
                 3. The remaining text is movie plot!
                     Finally, we have movie plot, I will put it into plot_list which is the list that we will use later. 
-            <h2>Cleaning the dataset</h2>
+    <h2>Cleaning the dataset</h2>
                 Since this dataset has many restriction and very messy as I said below.
                 1. The data is very messy, there are a lot of # and number and ‘ (aphostophe)
                     I solved this problem  with isalpha() method to classify the word. 
@@ -33,7 +33,7 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
                     I drop 14 columns which each of them has 0 value more than 93%
                 4. There are a column containing only zero value
                     I drop that column.
-            <h2>Cleaning the text</h2>
+    <h2>Cleaning the text</h2>
                 Since we have to do a calculation, we have to simplify the text as much as possible, avoid unneccessary action in the classification process. This is a process to clean the text data. 
                     1. Tokenize 
                     2. Word only
@@ -43,7 +43,7 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
                 You can see all of these method that I did in the picture below. 
                 <img src='cleaningdata.png'>
 <h1>Classification</h1>
-    <h2>Text Representation</h2>
+    Text Representation
         Since the data that I'm dealing with is text data. So I have to convert the text into the type of data that can be calculated. So I brought to choice to consider: Word2Vec vector and Tf-idf Vector. Let's see what is the difference between these vectors.
         1. Vector from Word2Vec algorithm 
             Word2Vec algorithm is a group of model that are used to produce text embedding. These models are shallow, two-layer neural network that are trained to reconstruct linguistic context of words. These vectors is suited for information retrieving, or understanding some information.
@@ -58,14 +58,14 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
             TF-IDF:
                 tf-idf(w) = tf(w)*idf(w)
             TF-IDF vector is suited for text classification, topic modeling, or stop word filtering, because this vector can do well on selecting the word that is the most important.
-    <h2>Classifier</h2>
+    Classifier
         In this project, these are classifier models that I used.
             1. Decision Tree
             2. Extra Tree
             3. Random Forest
             4. MLkNN (Multi-label K-Nearest Neighbor)
         To be simple, I used the same splitted dataset on those model and judged by the accuracy from each model. I did this two times. First time I trained model with Word2Vec vector to get measure the accuracy, and then I trained model with TF-IDF vector afterward.
-    <h2>The result and analysis</h2>
+    The result and analysis
         After we run all of those model, this is the result that we got. 
         <img src='result.png'>
         MLkNN is obviously better than other model, especially the model trained from TF-IDF vector. 
