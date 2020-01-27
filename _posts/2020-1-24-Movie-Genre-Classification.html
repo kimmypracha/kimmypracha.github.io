@@ -17,11 +17,11 @@ This is the first NLP project for me. I choose to do the Text Classification Pro
             My assumption is "Movie plots at some lines are not covered by quotation mark, but some of them are covered by quotation mark." If it's true, this can cause the table have inequal columns in each row. As a result, the read_csv() method didn't work.
     <h2> Start to extract the dataset </h2>
             I started to read file with as a text file on each line, and put it into a list of sentence of each line. Of course, more than 160,000 lines. 
-                1. Capture 'Topic' First
+                <h3>1. Capture 'Topic' First</h3>
                     Since Topic is the most part that has pattern, so I use regular expression to extract the text that covered by three quotation marks. I capture that data to append to topic_list and delete it from the text in the main list.
-                2. Capture 'Number'
+                <h3>2. Capture 'Number'</h3>
                     Since the another part that is easily to capture is binary representation part. So I use regular expression to capture the text that have 0 or 1 with space repetition for 28 times. So I can capture the binary representation part. I append this part as a list of number to vector_list. So I'll have vector_list as a list of list containing binary representation of movie category. Afterward, I deleted the binary representation from the main text. 
-                3. The remaining text is movie plot!
+                <h3>3. The remaining text is movie plot!</h3>
                     Finally, we have movie plot, I will put it into plot_list which is the list that we will use later. 
     <h2>Cleaning the dataset</h2>
                 Since this dataset has many restriction and very messy as I said below.
